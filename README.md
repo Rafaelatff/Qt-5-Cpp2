@@ -185,3 +185,39 @@ And as result, we have a volume of 27000 (that is 30 * 30 * 30).
 
 ![image](https://user-images.githubusercontent.com/58916022/223709621-da70e488-50f7-4ac8-87e0-f72b280e7131.png)
 
+## Inheritance between object classes
+
+Here we will have a class that extends the rectangle and inherit everything from the public space of the rectangle class.
+
+```c++
+class Square: public Rectangle{
+public:
+    Square(uint32_t side):Rectangle(side,side){
+    }
+ };
+```
+
+Then the main just stayed as:
+
+```c++
+int main(){
+    Rectangle r;
+    Rectangle r1(20,20);
+    Para p (30,30,30);
+    Square s(40);
+    cout << "The area of the rectangle is:" << r1.getArea() << endl;
+    cout << "The volume of our shape is:" << p.getVolume() << endl;
+    cout << "The area of our square is:" << s.getArea() << endl;
+    return 0;
+}
+```
+
+And we have as result:
+
+![image](https://user-images.githubusercontent.com/58916022/223712650-ec4a2169-2f20-4f13-8bd8-66c08e694a29.png)
+
+## Separing the files
+
+Now we will create new header and source files for each class that we created. Then we will move the class object for the header file and everything that is outside to the source file.
+
+
